@@ -7,9 +7,10 @@ from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import StringProperty, NumericProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition, FadeTransition
-from kivymd.uix.label import MDIcon
+from kivymd.uix.label import MDIcon, MDLabel
 from kivymd.app import MDApp
 from kivymd.uix.card import MDCard
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.toast import toast  # Usamos toast en lugar de Snackbar
 
 from utilidades import (
