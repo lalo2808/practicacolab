@@ -1105,7 +1105,6 @@ class RegularizacionApp(MDApp):
         if any(r is None for r in self.respuestas_usuario):
             mostrar_mensaje("Debes responder todas las preguntas antes de finalizar.")
             return
-
         self.quiz_finalizado = True
         # Deshabilitar checkboxes
         self.cargar_pregunta_actual()  # esto actualiza el estado disabled
@@ -1128,6 +1127,7 @@ class RegularizacionApp(MDApp):
 
         total = len(self.preguntas_lista)
         porcentaje = calcular_porcentaje(aciertos, total)
+        self.puntaje_actual = aciertos
 
         # Guardar en base de datos
         db.guardar_intento(self.usuario["id"], self.curso_actual, self.modulo_actual, aciertos, porcentaje)
